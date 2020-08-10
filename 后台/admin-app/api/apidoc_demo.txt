@@ -1,0 +1,50 @@
+/**
+ * @apiName banners
+ * @apiGroup banners
+ * @api {get} api/banner 获取轮播图的数据
+ * @apiDescription 获取轮播图的数据
+ * @apiParam { number } limit 每页显示个数（默认值10）
+ * @apiParam { number } count 页码（默认值0)
+ * @apiSuccessExample { json } Success-Response:
+ * {
+ *  code: '200',
+ *  message: '获取轮播图的数据',
+ *  data: []
+ * }
+ * @apiErrorExample { json } Error-Response:
+ *  {
+ *  code: '200',
+ *  message: '获取轮播图的数据',
+ *  data: []
+ *  }
+ * @apiVersion 1.0.0
+ */
+
+/**
+ * @apiName hahahaha
+ * @apiGroup banners
+ * @api {get} api/banner 获取轮播图的数据
+ * @apiDescription 获取轮播图的数据
+ * @apiParam { number } limit 每页显示个数（默认值10）
+ * @apiParam { number } count 页码（默认值0)
+ * @apiSuccessExample { json } Success-Response
+ * {
+ *  code: '200',
+ *  message: '获取轮播图的数据',
+ *  data: []
+ * }
+ * @apiErrorExample { json } Error-Response
+ *  {
+ *  code: '200',
+ *  message: '获取轮播图的数据',
+ *  data: []
+ *  }
+ * @apiVersion 1.0.0
+ */
+
+var express = require("express");
+var router = express.Router();
+var { index } = require("../controllers/indexControll");
+router.get("/", index);
+
+module.exports = router;

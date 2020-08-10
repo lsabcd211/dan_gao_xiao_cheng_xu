@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据上传</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.staticfile.org/axios/0.19.2/axios.js"></script>
+  </head>
+  <body>
+    <p>数据上传</p>
+    <input type="file" class="file">
+    <script>
+      document.querySelector(".file").onchange=function(e){
+        var formdata=new FormData();
+        formdata.append("fileupdata",e.target.files[0])
+        axios({
+          method:"POST",
+          url:"/updata/file",
+          data:formdata
+        }).then(res=>{
+          console.log(res);
+        })
+      }
+    </script>
+  </body>
+</html>

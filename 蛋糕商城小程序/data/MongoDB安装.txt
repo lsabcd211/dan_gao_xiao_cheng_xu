@@ -1,0 +1,53 @@
+1.MongoDB安装包
+2.配置环境变量
+3.创建数据库存放文件夹 （要自行创建） 
+4使用.win10的管理员命令窗口输入：
+mongod --dbpath="D:\Program Files\MongoDBdata\data\db"  
+看到27017端口 表示成功
+
+5.安装Robomongo这个MongoDB可视化软件
+创建连接
+1.数据库结构 库>集合>item>字段
+2.导入数据库数据
+mongoimport -h localhost:27017 -d test -c banners 文件地址
+例如： mongoimport -h localhost:27017 -d test -c banners D:/实习/test/蛋糕商城-test-uniapp/data/banners.json
+2020-05-21T10:21:31.903+0800    connected to: mongodb://localhost:27017/
+2020-05-21T10:21:31.952+0800    2 document(s) imported successfully. 0 document(s) failed to import.
+
+
+启动nod服务
+1.在nod项目的根目录使用cnpm i 下载模块
+2.进入项目目录启动项目npm run start
+3.访问API文档 localhost:3000/apidoc
+
+启动流程：
+1.启动数据库
+2.启动数据库可视化工具
+3.地洞node服务
+4.访问API文档 localhost：3000/apidoc
+
+
+
+
+
+H5端的配置，在manifest里添加，并且修改uni.request配置
+ "h5" : {
+        "devServer" : {
+            "port" : 8000,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/doc" : {
+                    "target" : "http://localhost:3000",
+                    "changeOrigin" : true,
+                    "secure" : false,
+                    "pathRewrite" : {
+                        "^/doc" : ""
+                    }
+                }
+            }
+        },
+        "domain" : "http://localhost:3000",
+        "router" : {
+            "mode" : "hash"
+        }
+    }

@@ -1,0 +1,100 @@
+define({ "api": [
+  {
+    "name": "首页数据",
+    "group": "index",
+    "type": "get",
+    "url": "index",
+    "title": "获取首页数据",
+    "description": "<p>获取首页数据</p>",
+    "version": "1.0.0",
+    "filename": "api/index.js",
+    "groupTitle": "index"
+  },
+  {
+    "name": "用户注册接口",
+    "group": "user",
+    "type": "post",
+    "url": "user/reg",
+    "title": "用户注册接口",
+    "description": "<p>用户注册接口</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>用户账号 （必填）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "pwd",
+            "description": "<p>用户密码    （必填）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "nickname",
+            "description": "<p>用户昵称 （必填）</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response",
+          "content": "{ code: \"10002\", msg: \"注册成功\", info:{phone:\"xxxxx\",nickname:\"xxxx\",_id:\"xxx\"} }\n{ code: \"10001\", msg: \"用户名已存在\" }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/user.js",
+    "groupTitle": "user"
+  },
+  {
+    "name": "用户登录接口",
+    "group": "user",
+    "type": "post",
+    "url": "user/login",
+    "title": "用户登录接口",
+    "description": "<p>用户登录接口</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>用户账号 （必填）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "pwd",
+            "description": "<p>用户密码    （必填）</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response",
+          "content": "{ code: \"10001\", msg: \"账号不存在\" }\n{ code: \"10002\", msg: \"密码错误\" }\n{ code: \"10003\", msg: \"登录成功\", info:{phone:\"xxxxx\",nickname:\"xxxx\",_id:\"xxx\"} }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/user.js",
+    "groupTitle": "user"
+  }
+] });
